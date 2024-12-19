@@ -1,6 +1,17 @@
 const schoolSubmit = document.getElementById("schoolSubmit");
 const schoolList = document.getElementById("schoolList");
 const schoolInput = document.getElementById("schoolInput");
+const resetButton = document.getElementById("reset")
+
+resetButton.addEventListener("click", (event) => {
+
+    schoolList.innerHTML = "";
+    homeList.innerHTML = "";
+
+    localStorage.setItem("schoolTodos", JSON.stringify(""));
+    localStorage.setItem("homeTodos", JSON.stringify(""));
+});
+
 
 const saveTodo = (listName) => {
     const newTodo = document.createElement("li");
