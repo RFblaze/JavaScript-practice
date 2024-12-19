@@ -5,9 +5,14 @@ const schoolInput = document.getElementById("schoolInput");
 schoolSubmit.addEventListener("click", (event) => {
     event.preventDefault();
 
-    if (schoolInput.value != ""){
+    if (schoolInput.value != "") {
         const newTodo = document.createElement("li");
-        newTodo.innerHTML = schoolInput.value;
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+
+        newTodo.style.listStyleType = "none"; // Remove the bullet point
+        newTodo.innerHTML = ` ${schoolInput.value}`;
+        newTodo.prepend(checkbox);
         schoolList.appendChild(newTodo);
 
         schoolInput.value = "";
@@ -22,13 +27,20 @@ const homeInput = document.getElementById("homeInput");
 homeSubmit.addEventListener("click", (event) => {
     event.preventDefault();
 
-    if (homeInput.value != ""){
+    if (homeInput.value != "") {
         const newTodo = document.createElement("li");
-        newTodo.innerHTML = homeInput.value;
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+
+        newTodo.style.listStyleType = "none"; // Remove the bullet point
+        newTodo.innerHTML = ` ${homeInput.value}`;
+        newTodo.prepend(checkbox);
         homeList.appendChild(newTodo);
 
         homeInput.value = "";
     }
+    
+    
     
 
 })
