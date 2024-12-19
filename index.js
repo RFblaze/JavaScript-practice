@@ -33,7 +33,7 @@ const saveTodo = (listName) => {
             // || [] is to return an empty array if JSON.parse returns null
 
             savedHomeTodos.push(homeInput.value);
-            localStorage.setItem("schoolTodos", JSON.stringify(savedHomeTodos));
+            localStorage.setItem("homeTodos", JSON.stringify(savedHomeTodos));
 
             homeInput.value = "";
             break;
